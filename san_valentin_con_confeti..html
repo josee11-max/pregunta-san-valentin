@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta de San Valentín</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fef2f2;
+            text-align: center;
+            padding: 50px;
+            color: #333;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .floral-background {
+            background-image: url('https://i.imgur.com/yYFhGTV.jpg'); /* Imagen gatito con flores */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .question {
+            font-size: 24px;
+            color: #e91e63;
+        }
+        .button {
+            font-size: 18px;
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #c2185b;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+        .response img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div class="floral-background"></div>
+    <h1>Hola amor</h1>
+    <p class="question">¿Quieres pasar el 14 de febrero conmigo?</p>
+    <button class="button" id="yesBtn">Sí</button>
+    <button class="button" id="noBtn">No</button>
+
+    <div class="response" id="responseText"></div>
+</div>
+
+<script>
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        document.getElementById('responseText').innerHTML = `
+            <p>¡Gracias amor, te amo! 💖</p>
+            <img src="https://i.imgur.com/sqzeLAg.jpg" alt="Gracias amor">
+        `;
+        
+        // Llamada a la función de confeti
+        confetti({
+            particleCount: 100,
+            spread: 70,
+            origin: { y: 0.6 }
+        });
+    });
+
+    document.getElementById('noBtn').addEventListener('click', function() {
+        document.getElementById('responseText').innerHTML = `
+            <p>No importa, soy un tío chill de cojones 😎</p>
+            <img src="https://i.imgur.com/5rKMArZ.jpg" alt="No importa">
+        `;
+    });
+</script>
+
+</body>
+</html>
